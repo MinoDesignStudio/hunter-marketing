@@ -1,0 +1,3 @@
+# Old Webflow blog URLs -> new blog permalinks (honoured by Cloudflare
+# Workers/Pages static assets at go-live; inert on GitHub Pages preview).
+/post/* /blog/:splat 301

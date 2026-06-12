@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/blog.css';
+
+import blogConsistency from '../../assets/blog-consistency.jpg';
+import blogFractionalCmo from '../../assets/blog-fractional-cmo.jpg';
+import blogAiVoice from '../../assets/blog-ai-voice.jpg';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout
+  title="Blog | Hunter Marketing Co."
+  description="Strategic thinking for growth-minded leaders. Practical marketing strategy, consistency and growth advice from Hunter Marketing Co. in Brisbane."
+  path="/blog/"
+>
+<Nav />
+<main>
+<section class="blogix">
+  <div class="container">
+    <div class="blogix__head reveal">
+      <span class="eyebrow eyebrow--show">From the blog</span>
+      <h1 class="svc-title" style="margin-top:16px">Strategic thinking for growth-minded leaders.</h1>
+    </div>
+    <div class="blogix__list">
+      <a href={base + 'blog/why-marketing-strategy-consulting-is-the-growth-investment-most-businesses-are-missing/'} class="blogix-card reveal">
+        <div class="blogix-card__media"><Image src={blogFractionalCmo} alt="Kristy presenting a marketing strategy session" widths={[480, 800, 1200]} sizes="(max-width: 860px) 100vw, 340px" loading="lazy" /></div>
+        <div class="blogix-card__body">
+          <span class="blogix-card__cat">Strategy</span>
+          <h2 class="blogix-card__title">Why Marketing Strategy Consulting Is the Growth Investment Most Businesses Are Missing</h2>
+          <p class="blogix-card__meta">Hunter Marketing Co. · <time datetime="2026-06-11">11 June 2026</time> · 8 min read</p>
+          <span class="blogix-card__read">Read article <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a href={base + 'blog/your-guide-to-a-smarter-marketing-strategy/'} class="blogix-card reveal">
+        <div class="blogix-card__media"><Image src={blogAiVoice} alt="Close-up of Kristy sketching a marketing plan on a tablet with a stylus" widths={[480, 800, 1200]} sizes="(max-width: 860px) 100vw, 340px" loading="lazy" /></div>
+        <div class="blogix-card__body">
+          <span class="blogix-card__cat">Strategy</span>
+          <h2 class="blogix-card__title">Your Guide to a Smarter Marketing Strategy</h2>
+          <p class="blogix-card__meta">Hunter Marketing Co. · <time datetime="2026-03-30">30 March 2026</time> · 5 min read</p>
+          <span class="blogix-card__read">Read article <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a href={base + 'blog/consistent-marketing-isnt-sexy-but-it-gets-results/'} class="blogix-card reveal">
+        <div class="blogix-card__media"><Image src={blogConsistency} alt="Kristy working at a laptop, planning consistent marketing activity" widths={[480, 800, 1200]} sizes="(max-width: 860px) 100vw, 340px" loading="lazy" /></div>
+        <div class="blogix-card__body">
+          <span class="blogix-card__cat">Consistency</span>
+          <h2 class="blogix-card__title">Consistent Marketing Isn’t Sexy, But It Gets Results</h2>
+          <p class="blogix-card__meta">Hunter Marketing Co. · <time datetime="2026-03-02">2 March 2026</time> · 5 min read</p>
+          <span class="blogix-card__read">Read article <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<Footer />
+<script is:inline>
+const hdr = document.getElementById('siteHeader');
+const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 4);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const d = parseFloat(e.target.style.getPropertyValue('--d') || '0');
+      setTimeout(() => e.target.classList.add('is-in'), d);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</BaseLayout>
