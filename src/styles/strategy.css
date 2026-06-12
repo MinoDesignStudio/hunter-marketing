@@ -1616,6 +1616,17 @@ section { position: relative; }
 }
 .svc-pf-step:first-child { padding-top: 0; }
 .svc-pf-step:last-child { padding-bottom: 0; }
+.svc-pf-steps--ideal { margin-top: 26px; }
+.svc-pf-steps--ideal .svc-pf-step {
+  align-items: flex-start;
+  padding: 12px 0;
+}
+.svc-pf-steps--ideal .svc-pf-num {
+  font-size: 36px;
+}
+.svc-pf-steps--ideal .svc-pf-label {
+  line-height: 1.55;
+}
 .svc-pf-num {
   font-family: var(--font-serif);
   font-size: 44px;
