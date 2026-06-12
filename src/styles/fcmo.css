@@ -1608,7 +1608,7 @@ section { position: relative; }
 .svc-pf-step {
   padding: 8px 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 .svc-pf-step:first-child { padding-top: 0; }
