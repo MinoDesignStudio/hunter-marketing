@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  /** Canonical path on the live domain, e.g. "/" or "/services/marketing-plan-in-a-day/" */
+  path: string;
+  /** Resolved image src (from an import) used for social sharing previews */
+  ogImage?: string;
+}
+
+const { title, description, path, ogImage } = Astro.props;
+
+// The GitHub Pages build is a client-review preview: search engines must
+// never index it, and canonicals always point at the future live domain.
+const isPagesPreview = process.env.DEPLOY_TARGET === 'pages';
+const canonical = new URL(path, 'https://www.huntermarketing.co');
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const ogImageUrl = ogImage ? new URL(ogImage, Astro.url) : undefined;
+---
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{isPagesPreview && <meta name="robots" content="noindex, nofollow" />}
+<link rel="icon" type="image/png" href={`${base}favicon.png`} />
+<link rel="sitemap" href={`${base}sitemap-index.xml`} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Hunter Marketing Co." />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<slot />
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+// Site footer. Links to unbuilt pages (strategy/fractional services, growth
+// assessment, company pages, privacy/terms) are hidden until built; the
+// fourth grid column stays empty so the layout matches the source design.
+import { Image } from 'astro:assets';
+import logoRev from '../assets/logo-rev.png';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <Image src={logoRev} alt="Hunter Marketing Co." width={400} densities={[1, 2]} loading="lazy" />
+        <p style="margin-top:18px; max-width:340px; font-size:14.5px; line-height:1.6;">Strategic marketing partnership for ambitious business owners and growth-focused organisations. Brisbane-based, Australia-wide.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href={`${base}services/marketing-plan-in-a-day/`}>1:1 Marketing Plan in a Day</a></li>
+          <li><a href={`${base}services/marketing-plan-in-a-day-brand-photos/`}>Marketing Plan in a Day &amp; Brand Photos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@huntermarketing.co">hello@huntermarketing.co</a></li>
+          <li><a href="https://linkedin.com/">LinkedIn</a></li>
+          <li><a href="https://instagram.com/">Instagram</a></li>
+          <li><a href="https://facebook.com/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>© 2026 Hunter Marketing Co. All rights reserved.</span>
+    </div>
+  </div>
+</footer>

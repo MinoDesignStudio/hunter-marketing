@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers config for go-live on the client's account.
+  // Static site: Workers serves ./dist directly, no worker script needed.
+  // Import this repo via Workers Builds (build command: npm run build).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hunter-marketing",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
