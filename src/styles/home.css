@@ -1068,6 +1068,7 @@ section { position: relative; }
 .leadmag {
   padding: 100px 0;
   position: relative;
+  background: #fff;
 }
 .leadmag__inner {
   display: grid;
