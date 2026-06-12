@@ -1,0 +1,350 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/strategy.css';
+
+import foxIcon from '../../assets/fox-icon.png';
+import kristyClient from '../../assets/mpiad-kristy-client.jpg';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout
+  title="6-12 Month Marketing Strategy & Implementation Plan | Hunter Marketing Co."
+  description="A 6-12 month marketing strategy and implementation plan for established, growth-focused businesses. Clear direction, defined priorities and disciplined execution that builds momentum."
+  path="/services/marketing-strategy-implementation-plan/"
+  ogImage={kristyClient.src}
+>
+<!-- SVG blob defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="blob-pronounced" clipPathUnits="objectBoundingBox">
+      <path d="M0.52,-0.02 C0.74,-0.04 0.97,0.08 0.97,0.26 C0.99,0.46 0.78,0.58 0.97,0.76 C0.99,0.96 0.66,1.06 0.42,1.02 C0.20,0.99 -0.02,0.92 -0.04,0.70 C-0.04,0.50 0.07,0.34 0.04,0.18 C0.02,0.00 0.28,0.02 0.52,-0.02 Z" />
+    </clipPath>
+    <clipPath id="blob-soft" clipPathUnits="objectBoundingBox">
+      <path d="M0.50,0.02 C0.72,0.02 0.95,0.10 0.98,0.32 C1.02,0.55 0.97,0.78 0.82,0.92 C0.66,1.05 0.42,1.00 0.23,0.92 C0.04,0.83 0.00,0.60 0.02,0.40 C0.04,0.20 0.18,0.05 0.50,0.02 Z" />
+    </clipPath>
+    <clipPath id="blob-mid" clipPathUnits="objectBoundingBox">
+      <path d="M0.51,0.01 C0.72,0.00 0.93,0.10 0.97,0.30 C1.02,0.51 0.95,0.72 0.84,0.88 C0.72,1.04 0.50,1.00 0.32,0.95 C0.14,0.91 0.02,0.78 0.01,0.58 C-0.01,0.39 0.07,0.21 0.21,0.10 C0.30,0.03 0.39,0.02 0.51,0.01 Z" />
+    </clipPath>
+    <clipPath id="blob-alt" clipPathUnits="objectBoundingBox">
+      <path d="M0.44,-0.04 C0.68,-0.06 0.96,0.06 1.04,0.28 C1.12,0.52 0.94,0.76 0.86,0.94 C0.74,1.14 0.44,1.10 0.22,0.96 C0.02,0.84 -0.06,0.60 -0.02,0.38 C0.04,0.16 0.20,-0.02 0.44,-0.04 Z" />
+    </clipPath>
+    <clipPath id="blob-tert" clipPathUnits="objectBoundingBox">
+      <path d="M0.58,-0.02 C0.84,0.04 1.06,0.20 1.02,0.46 C0.98,0.72 0.84,0.96 0.58,1.02 C0.32,1.08 0.06,0.94 -0.02,0.72 C-0.10,0.50 -0.02,0.24 0.14,0.10 C0.28,-0.02 0.40,-0.06 0.58,-0.02 Z" />
+    </clipPath>
+    <clipPath id="blob-card-b" clipPathUnits="objectBoundingBox">
+      <path d="M0.06,0.14 C0.10,0.02 0.26,0.00 0.54,0.02 C0.82,0.04 0.96,0.02 0.98,0.14 C1.00,0.28 0.96,0.56 0.97,0.80 C0.98,0.96 0.90,1.04 0.48,1.00 C0.08,0.96 0.00,0.94 0.02,0.76 C0.04,0.52 0.02,0.26 0.06,0.14 Z" />
+    </clipPath>
+    <clipPath id="blob-card-c" clipPathUnits="objectBoundingBox">
+      <path d="M0.02,0.18 C0.00,0.06 0.18,0.00 0.50,0.02 C0.78,0.04 0.96,0.00 1.00,0.12 C1.04,0.26 0.98,0.52 0.98,0.76 C0.98,0.94 0.86,1.02 0.52,1.00 C0.14,0.98 0.04,0.92 0.02,0.74 C0.00,0.56 0.04,0.30 0.02,0.18 Z" />
+    </clipPath>
+    <clipPath id="blob-card" clipPathUnits="objectBoundingBox">
+      <path d="M0.04,0.10 C0.06,0.02 0.20,0.00 0.50,0.01 C0.80,0.02 0.94,0.00 0.98,0.10 C1.02,0.22 1.00,0.50 0.99,0.78 C0.98,0.96 0.92,1.02 0.50,0.99 C0.10,0.97 0.02,0.96 0.01,0.78 C0.00,0.50 0.02,0.18 0.04,0.10 Z" />
+    </clipPath>
+    <clipPath id="blob-wave" clipPathUnits="objectBoundingBox">
+      <path d="M0.00,0.04 C0.20,-0.02 0.42,0.06 0.62,0.04 C0.82,0.02 0.94,0.00 1.00,0.06 L1.00,1.00 L0.00,1.00 Z" />
+    </clipPath>
+    <filter id="blob-keyline" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+      <feMorphology operator="dilate" radius="7" in="SourceAlpha" result="outer"/>
+      <feMorphology operator="dilate" radius="5" in="SourceAlpha" result="gap"/>
+      <feComposite in="outer" in2="gap" operator="out" result="ring"/>
+      <feFlood flood-color="#221C34" result="color"/>
+      <feComposite in="color" in2="ring" operator="in" result="keyline"/>
+      <feMerge>
+        <feMergeNode in="keyline"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<Nav />
+
+<!-- ============ HERO ============ -->
+<section class="svc-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="reveal" style="--d:0">
+      <Image src={foxIcon} alt="" class="svc-hero__fox" aria-hidden="true" width={68} densities={[1, 2]} loading="eager" />
+      <span class="svc-hero__eyebrow">For Established, Growth-Focused Businesses</span>
+      <h1>6-12 Month Marketing Strategy &amp; Implementation Plan</h1>
+      <div><span class="svc-hero__price">Price on enquiry</span></div>
+      <p class="svc-hero__sub">Brisbane-based, also available online Australia wide</p>
+    </div>
+  </div>
+  <div class="svc-hero__wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C320,80 720,0 1100,50 C1220,62 1340,38 1440,44 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="svc-intro">
+  <div class="container-narrow">
+    <div class="reveal" style="--d:0">
+      <h2 class="svc-intro__lead">Go from overwhelmed and uncertain to clear and confident. In a single day.</h2>
+      <p class="svc-intro__body">Spend a full day with Kristy in a focused, done-with-you session built around your business. You'll walk away with the brand and marketing foundations in place, including your ICP, improved messaging, high value offers and a clear, actionable 90 day plan you can implement yourself.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARALLAX IMAGE ============ -->
+<div class="svc-parallax" aria-hidden="true"></div>
+
+<!-- ============ WHAT YOU'LL RECEIVE + WHAT GETS COVERED ============ -->
+<div class="svc-wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,34 C360,70 900,10 1440,50 L1440,80 L0,80 Z" fill="#f5f5f5"/>
+  </svg>
+</div>
+<section class="svc-section svc-section--grey">
+  <div class="container">
+    <div class="svc-split reveal" style="--d:0">
+      <div>
+        <h2 class="svc-title">What You'll Receive</h2>
+        <ul class="svc-checklist svc-checklist--verdigris">
+          <li>30-min strategy call + pre-work before your day</li>
+          <li>Full-day session in Brisbane or via Zoom (split across two sessions if needed)</li>
+          <li>Brand and marketing foundations tailored to your business</li>
+          <li>A complete marketing plan built on the proven MPIAD framework</li>
+          <li>A follow-up accountability call to keep momentum going</li>
+        </ul>
+        <a href="https://calendly.com/huntermarketingco/free-15-min-marketing-consultation-call" target="_blank" rel="noopener" class="btn btn--primary btn--mustard" style="margin-top:28px;display:inline-block;">Book a discovery call &rarr;</a>
+        <p class="svc-pf-disc" style="margin-top:20px;">All engagements begin with a discovery call to ensure the fit is right for both sides. We'll discuss your current situation, goals, and whether the <strong><a href="#" style="color:inherit;text-decoration:underline;">1:1 MPIAD</a></strong> is the right path forward.</p>
+      </div>
+      <div>
+        <h2 class="svc-title">What Gets Covered on the Day</h2>
+        <ul class="svc-checklist svc-checklist--verdigris">
+          <li>Your unique value proposition - what makes your business the clear choice</li>
+          <li>Your ideal customer - who they are, what they need, and how you solve it</li>
+          <li>Your key messages - consistent, authentic communication across every channel</li>
+          <li>Your offers and pricing - reviewed and refined for clarity and impact</li>
+          <li>The right marketing channels for your business and goals</li>
+          <li>Your 90-day action plan prioritised and ready to implement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="svc-wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,46 C400,10 900,72 1440,30 L1440,0 L0,0 Z" fill="#f5f5f5"/>
+  </svg>
+</div>
+<!-- ============ PERFECT FOR ============ -->
+<section class="svc-section" style="background:#fff;">
+  <div class="container">
+    <div class="svc-split reveal" style="--d:0">
+      <div class="svc-pf-cards">
+        <h2 class="svc-title" style="margin-bottom:20px;">Perfect for:</h2>
+        <div class="svc-pf-steps">
+          <div class="svc-pf-step">
+            <span class="svc-pf-num">01</span>
+            <p class="svc-pf-label">Solo founders and business owners</p>
+          </div>
+          <div class="svc-pf-step">
+            <span class="svc-pf-num">02</span>
+            <p class="svc-pf-label">Creative freelancers and consultants</p>
+          </div>
+          <div class="svc-pf-step">
+            <span class="svc-pf-num">03</span>
+            <p class="svc-pf-label">Marketing coordinators ready for strategic direction</p>
+          </div>
+        </div>
+        <p class="svc-pf-avail">Only 1 spot available a month.</p>
+        <a href="https://calendly.com/huntermarketingco/free-15-min-marketing-consultation-call" target="_blank" rel="noopener" class="btn btn--primary btn--mustard svc-pf-btn">Book a discovery call &rarr;</a>
+      </div>
+      <div class="svc-blob-wrap">
+        <div class="svc-pf-media-wrap">
+          <div class="svc-pf-media" data-blob-target data-blob-variant="card-b">
+          <Image src={kristyClient} alt="Kristy working with a client" widths={[600, 1200, 1800]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="svc-wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,50 C360,10 960,80 1440,20 L1440,0 L0,0 Z" fill="#f5f5f5"/>
+  </svg>
+</div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="svc-testimonials">
+  <div class="container">
+    <div class="svc-section-head reveal" style="--d:0">
+      <h2 class="svc-title">What our clients say.</h2>
+    </div>
+    <div class="svc-testimonials__grid reveal" style="--d:80">
+      <article class="t-card">
+        <div class="t-quote-mark">"</div>
+        <p class="t-quote">From the get-go it was really impressive how much knowledge Kristy has of the industry. It gave me a lot of confidence as we built the marketing plan for my business. It was finally something that was going to have an effect. I was throwing a lot of stuff out there and nothing was sticking. The plan and the support Kristy has given me has been fundamental to the growth of my business. We've started to gain exposure, in a short amount of time, we're starting to get new leads as a result. I couldn't have been happier with the whole process. MPIAD is a great price and high value. I loved it.</p>
+        <div class="t-attr">
+          <span class="t-name">Steven Kearney</span>
+          <span class="t-role">Founder, Secure Minded</span>
+          <span class="t-service">Marketing Plan in a Day</span>
+        </div>
+      </article>
+      <article class="t-card">
+        <div class="t-quote-mark">"</div>
+        <p class="t-quote">I have worked with Kristy 1:1 on my business marketing. Kristy is a true advisor, provides great strategy (not just digital marketing), practical suggestions for action, and her genuine care and dedication to the future of my business and to raising my professional profile and personal brand is clear. I feel like she is in my corner and she supports me as a colleague and client. Thank you Kristy!</p>
+        <div class="t-attr">
+          <span class="t-name">Eleni Dracakis</span>
+          <span class="t-role">Founder, Eleni Dracakis Business Psychologist</span>
+          <span class="t-service">Marketing Plan in a Day</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<div class="svc-wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,44 C320,80 800,6 1440,52 L1440,80 L0,80 Z" fill="#fff"/>
+  </svg>
+</div>
+<section class="svc-faq">
+  <div class="container">
+    <div class="svc-faq__inner">
+      <div class="reveal" style="--d:0">
+        <h2 class="svc-title" style="margin-top:0">Before you book.</h2>
+        <p class="section-intro" style="margin-top:24px">If you're weighing up whether we're the right fit, these are the questions we get asked most.</p>
+      </div>
+      <div class="faq__list reveal" style="--d:80">
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>What gets covered on the day?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">The session covers everything you need to build a solid marketing foundation for your small business. That includes clarifying your target audience, defining your brand positioning, identifying the right marketing channels for your business, and mapping out a prioritised action plan you can implement straight away. Every session is tailored to your specific business and goals, so the day looks different for every client.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>Do I need to prepare anything before the day?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">Yes, and that's part of what makes it work. Before your session, you'll complete a short pre-work document and have a 30-minute strategy call with Kristy. This means the day itself is focused entirely on building your plan.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>What do I walk away with?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">A complete, tailored marketing plan you can start using immediately. Not a template with your name on it - a plan built specifically around your business, your goals, and your market.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>What if I'm not based in Brisbane?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">No problem. Sessions are available via Zoom, and if you'd prefer two shorter sessions instead of one full day, that can be arranged to suit your schedule and time zone.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>I'm not a marketer. Will I be able to implement this myself?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">That's exactly who this is designed for. The session is built around equipping you to run your own marketing with confidence - you don't need a background in marketing or a team behind you.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>How far in advance do I need to book?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">Only one spot is available per month, so availability is limited. Booking 4 to 6 weeks ahead is recommended, though it's worth reaching out to check current availability.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__btn" aria-expanded="false">
+          <span>How do I book a Marketing Plan in a Day session?</span>
+          <span class="faq-item__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-item__panel"><div class="faq-item__panel-inner">Booking is straightforward. Click the link on this page to schedule a call with Kristy. Once confirmed, you'll receive an invoice for 50% upfront to secure your spot, with the remaining 50% due after your follow-up accountability call. From there, Kristy will book in your 30-minute strategy call where you'll talk through your business, your marketing goals, and any current challenges. You'll also receive your pre-work on this call, so you arrive on the day ready to hit the ground running. After that, your full-day session gets locked in and you're all set.</div></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta" id="book" data-screen-label="12 Final CTA" data-comment-anchor="finalcta">
+  <div class="container">
+    <div class="finalcta__inner">
+      <div class="reveal">
+        <span class="eyebrow">Ready when you are</span>
+        <h2>Stop reacting. <span class="hl">Start leading.</span></h2>
+        <p>Ready for marketing that works as hard as you do?</p>
+        <div class="svc-crosslinks svc-crosslinks--light">
+          <a href="#"><span class="arrow">→</span> Need strategy without the embedded leadership? See the <strong>6-12 Month Marketing Plan</strong></a>
+          <a href={`${base}services/marketing-plan-in-a-day-brand-photos/`}><span class="arrow">→</span> Solopreneur or small business? See <strong>Marketing Plan in a Day + Brand Photos</strong> (Group Program)</a>
+        </div>
+      </div>
+      <div class="reveal" style="--d:120">
+        <a href="mailto:hello@huntermarketing.co" class="btn btn--primary">Contact us <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<Footer />
+
+<script is:inline>
+// ===== Scroll header state =====
+const hdr = document.getElementById('siteHeader');
+const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 4);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ===== Reveal-on-scroll =====
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const d = parseFloat(e.target.style.getPropertyValue('--d') || '0');
+      setTimeout(() => e.target.classList.add('is-in'), d);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ===== Blob clip application =====
+const BLOB_VARIANTS = {
+  pronounced: { default: 'blob-pronounced', alt: 'blob-alt', tert: 'blob-tert', card: 'blob-card', 'card-b': 'blob-card-b', 'card-c': 'blob-card-c', wave: 'blob-wave' },
+  mid:        { default: 'blob-mid',        alt: 'blob-alt', tert: 'blob-tert', card: 'blob-card', 'card-b': 'blob-card-b', 'card-c': 'blob-card-c', wave: 'blob-wave' },
+  soft:       { default: 'blob-soft',       alt: 'blob-soft', tert: 'blob-soft', card: 'blob-card', 'card-b': 'blob-card-b', 'card-c': 'blob-card-c', wave: 'blob-wave' },
+};
+function applyBlobs(intensity) {
+  const map = BLOB_VARIANTS[intensity] || BLOB_VARIANTS.pronounced;
+  document.querySelectorAll('[data-blob-target]').forEach(el => {
+    const variant = el.dataset.blobVariant || 'default';
+    const id = map[variant] || map.default;
+    el.style.clipPath = `url(#${id})`;
+    el.style.webkitClipPath = `url(#${id})`;
+  });
+}
+applyBlobs('pronounced');
+
+// ===== FAQ accordion =====
+document.querySelectorAll('.faq-item__btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('is-open');
+    document.querySelectorAll('.faq-item').forEach(x => {
+      x.classList.remove('is-open');
+      x.querySelector('.faq-item__btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) {
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+</script>
+</BaseLayout>
