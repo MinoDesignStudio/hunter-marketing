@@ -1475,12 +1475,12 @@ section { position: relative; }
 }
 .svc-intro__lead {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(30px, 3.4vw, 44px);
   line-height: 1.15;
   color: var(--hmc-ink);
   margin: 0 auto 24px;
   font-weight: 400;
-  max-width: 780px;
+  max-width: 900px;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
@@ -1488,7 +1488,7 @@ section { position: relative; }
   font-size: 17px;
   line-height: 1.75;
   color: var(--ink-600);
-  max-width: 680px;
+  max-width: 820px;
   margin: 0 auto 36px;
 }
 
