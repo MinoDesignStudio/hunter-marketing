@@ -1489,7 +1489,10 @@ section { position: relative; }
   line-height: 1.75;
   color: var(--ink-600);
   max-width: 680px;
-  margin: 0 auto 36px;
+  margin: 0 auto 18px;
+}
+.svc-intro__body:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== Shared section styles ===== */
