@@ -1348,6 +1348,21 @@ section { position: relative; }
 
 :root { --body-font: Helvetica, 'Helvetica Neue', Arial, sans-serif; }
 
+/* ===== Blog card read-more ===== */
+.blog-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--hmc-ink);
+  transition: color 200ms var(--ease-out);
+}
+.blog-card__more .arrow { transition: transform 200ms var(--ease-out); }
+.blog-card:hover .blog-card__more { color: var(--hmc-verdigris); }
+.blog-card:hover .blog-card__more .arrow { transform: translateX(4px); }
+
 /* ===== Clients carousel ===== */
 .clients {
   padding: 24px 0 96px;
