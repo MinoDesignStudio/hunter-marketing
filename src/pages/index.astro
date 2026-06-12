@@ -596,6 +596,22 @@ const base = import.meta.env.BASE_URL.endsWith('/')
   </div>
 </section>
 
+<!-- ============ PARTNERS ============ -->
+<section class="partners" data-screen-label="10C Partners" data-comment-anchor="partners">
+  <div class="container">
+    <div class="partners__head reveal">
+      <span class="eyebrow eyebrow--show">Our partners</span>
+    </div>
+    <div class="partners__grid reveal" style="--d:120">
+      {partners.map((p) => (
+        <a href={p.url} class="partners__item" target="_blank" rel="noopener noreferrer">
+          <img src={p.logo.src} width={p.logo.width} height={p.logo.height} alt={`${p.name} logo`} loading="lazy" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
 <!-- ============ CLIENTS ============ -->
 <section class="clients" data-screen-label="10B Clients" data-comment-anchor="clients">
   <div class="container">
@@ -619,22 +635,6 @@ const base = import.meta.env.BASE_URL.endsWith('/')
             </a>
           ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- ============ PARTNERS ============ -->
-<section class="partners" data-screen-label="10C Partners" data-comment-anchor="partners">
-  <div class="container">
-    <div class="partners__head reveal">
-      <span class="eyebrow eyebrow--show">Our partners</span>
-    </div>
-    <div class="partners__grid reveal" style="--d:120">
-      {partners.map((p) => (
-        <a href={p.url} class="partners__item" target="_blank" rel="noopener noreferrer">
-          <img src={p.logo.src} width={p.logo.width} height={p.logo.height} alt={`${p.name} logo`} loading="lazy" />
-        </a>
       ))}
     </div>
   </div>
