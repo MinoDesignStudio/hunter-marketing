@@ -1831,18 +1831,17 @@ section { position: relative; }
 /* ===== Blog index ===== */
 .blogix { padding: 88px 0 110px; }
 .blogix__head { max-width: 800px; }
-.blogix__list { margin-top: 56px; display: flex; flex-direction: column; }
-.blogix-card {
+.blogix__list {
+  margin-top: 56px;
   display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 44px;
-  align-items: center;
-  padding: 40px 0;
-  border-top: 1px solid var(--ink-100);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 32px;
+}
+.blogix-card {
+  display: block;
   color: inherit;
 }
-.blogix-card:last-child { border-bottom: 1px solid var(--ink-100); }
-.blogix-card__media { border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 10; }
+.blogix-card__media { border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 11; margin-bottom: 22px; }
 .blogix-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease-out); }
 .blogix-card:hover .blogix-card__media img { transform: scale(1.05); }
 .blogix-card__cat {
@@ -1856,18 +1855,18 @@ section { position: relative; }
 .blogix-card__title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(24px, 2.8vw, 34px);
-  line-height: 1.15;
+  font-size: clamp(21px, 2vw, 25px);
+  line-height: 1.2;
   letter-spacing: -0.015em;
   color: var(--hmc-ink);
-  margin: 14px 0 0;
+  margin: 12px 0 0;
 }
-.blogix-card__meta { margin: 16px 0 0; font-size: 14px; color: var(--ink-400); }
+.blogix-card__meta { margin: 12px 0 0; font-size: 14px; color: var(--ink-400); }
 .blogix-card__read {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 16px;
   font-weight: 600;
   font-size: 15px;
   color: var(--hmc-ink);
@@ -1876,9 +1875,12 @@ section { position: relative; }
 .blogix-card__read .arrow { transition: transform 200ms var(--ease-out); }
 .blogix-card:hover .blogix-card__read { color: var(--hmc-verdigris); }
 .blogix-card:hover .blogix-card__read .arrow { transform: translateX(4px); }
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
+  .blogix__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
   .blogix { padding: 64px 0 80px; }
-  .blogix-card { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
+  .blogix__list { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
   .blogix-card__media { aspect-ratio: 16 / 9; }
 }
 
