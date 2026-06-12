@@ -15,6 +15,69 @@ import blogConsistency from '../assets/blog-consistency.jpg';
 import blogFractionalCmo from '../assets/blog-fractional-cmo.jpg';
 import blogAiVoice from '../assets/blog-ai-voice.jpg';
 
+import clientTps from '../assets/clients/tps.png';
+import clientDchouse from '../assets/clients/dchouse.png';
+import clientPackagedit from '../assets/clients/packagedit.png';
+import clientRitualhaus from '../assets/clients/ritualhaus.png';
+import clientBscaa from '../assets/clients/bscaa.svg';
+import clientStudyworkgrow from '../assets/clients/studyworkgrow.png';
+import clientSecureminded from '../assets/clients/secureminded.png';
+import clientSpsfacilities from '../assets/clients/spsfacilities.svg';
+import clientParamco from '../assets/clients/paramco.png';
+import clientFuturefemales from '../assets/clients/futurefemales.png';
+import clientUrbanmetal from '../assets/clients/urbanmetal.png';
+import clientNurturingconfidence from '../assets/clients/nurturingconfidence.png';
+import clientSociallyconstructed from '../assets/clients/sociallyconstructed.png';
+import clientThesolomons from '../assets/clients/thesolomons.png';
+import clientElenidracakis from '../assets/clients/elenidracakis.png';
+import clientWinningmedia from '../assets/clients/winningmedia.svg';
+import clientShifft from '../assets/clients/shifft.svg';
+import clientMcs from '../assets/clients/mcs.png';
+import clientSteinart from '../assets/clients/steinart.png';
+import clientOladigital from '../assets/clients/oladigital.png';
+import clientJackimcpherson from '../assets/clients/jackimcpherson.png';
+import clientCemoh from '../assets/clients/cemoh.svg';
+import clientMino from '../assets/clients/mino.png';
+import partnerRebeccaTaylor from '../assets/clients/rebeccataylor.png';
+import partnerOhMyDigital from '../assets/clients/ohmydigital.png';
+import partnerVizr from '../assets/clients/vizr.png';
+import partnerFbs from '../assets/clients/fbsconsulting.png';
+
+const clients = [
+  { name: 'TPS', url: 'https://tps.com.au/', logo: clientTps },
+  { name: 'DC House Design & Construction', url: 'https://dchouse.com.au/fast-track-granny-flats/', logo: clientDchouse },
+  { name: 'Packaged I.T.', url: 'https://www.packagedit.com.au/', logo: clientPackagedit },
+  { name: 'Ritual Haus', url: 'https://ritualhaus.com.au/', logo: clientRitualhaus },
+  { name: 'BSCAA', url: 'https://bscaa.com/', logo: clientBscaa },
+  { name: 'Study Work Grow', url: 'https://studyworkgrow.com/', logo: clientStudyworkgrow },
+  { name: 'Secure Minded', url: 'https://www.secureminded.au/', logo: clientSecureminded, mod: 'lgwide' },
+  { name: 'SPS Facilities', url: 'https://www.spsfacilities.com/', logo: clientSpsfacilities },
+  { name: 'ParamCo', url: 'https://paramco.com.au/', logo: clientParamco },
+  { name: 'Future Females Australia', url: 'https://futurefemalesaustralia.com.au/', logo: clientFuturefemales },
+  { name: 'Urban Metal', url: 'https://www.urbanmetal.com.au/', logo: clientUrbanmetal },
+  { name: 'Nurturing Confidence', url: 'https://www.nurturingconfidence.com.au/', logo: clientNurturingconfidence },
+  { name: 'Socially Constructed', url: 'https://www.socially-constructed.com/index', logo: clientSociallyconstructed },
+  { name: 'The Solomons Capital', url: 'https://thesolomons.com.au/capital/', logo: clientThesolomons },
+  { name: 'Eleni Dracakis', url: 'https://elenidracakis.co/', logo: clientElenidracakis },
+  { name: 'Winning Media', url: 'https://www.winningmedia.com.au/', logo: clientWinningmedia },
+  { name: 'Shifft', url: 'https://shifft.com.au/', logo: clientShifft },
+  { name: 'McConachie Stedman', url: 'https://www.mcs.au/', logo: clientMcs, mod: 'lg' },
+  { name: 'SteinArt', url: 'https://steinart.com.au/', logo: clientSteinart },
+  { name: 'Ola Digital', url: 'https://oladigital.co/', logo: clientOladigital },
+  { name: 'Jacki McPherson Occupational Therapy', url: 'https://www.jackimcpherson.com.au/', logo: clientJackimcpherson, mod: 'wide' },
+  { name: 'Cemoh', url: 'https://cemoh.com/', logo: clientCemoh },
+  { name: 'Mino Design & Digital', url: 'https://minodesignanddigital.com.au/', logo: clientMino },
+];
+
+const partners = [
+  { name: 'Rebecca Taylor Photography', url: 'https://www.rebeccataylor.com.au/', logo: partnerRebeccaTaylor },
+  { name: 'Oh My Digital', url: 'https://ohmydigitalagency.com.au/', logo: partnerOhMyDigital },
+  { name: 'VIZR', url: 'https://vizr.agency/', logo: partnerVizr },
+  { name: 'Cemoh', url: 'https://cemoh.com/', logo: clientCemoh },
+  { name: 'FBS Consulting', url: 'https://fbsconsulting.com.au/', logo: partnerFbs },
+  { name: 'Mino Design & Digital', url: 'https://minodesignanddigital.com.au/', logo: clientMino },
+];
+
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
@@ -529,6 +592,50 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         <p class="blog-card__excerpt">AI is a tool, not a substitute for strategy. The teams getting it right have a clear point of view, a tight set of guardrails, and a human in the loop on every meaningful piece.</p>
         <div class="blog-card__meta"><span>5 min read</span><span>·</span><span>January 2026</span></div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<section class="clients" data-screen-label="10B Clients" data-comment-anchor="clients">
+  <div class="container">
+    <div class="clients__head reveal">
+      <span class="eyebrow eyebrow--show">Trusted by</span>
+    </div>
+  </div>
+  <div class="clients__marquee reveal" style="--d:120">
+    <div class="clients__track">
+      {[false, true].map((isClone) => (
+        <div class="clients__set" aria-hidden={isClone ? 'true' : undefined}>
+          {clients.map((c) => (
+            <a
+              href={c.url}
+              class={`clients__item${c.mod ? ` clients__item--${c.mod}` : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabindex={isClone ? -1 : undefined}
+            >
+              <img src={c.logo.src} width={c.logo.width} height={c.logo.height} alt={isClone ? '' : `${c.name} logo`} loading="lazy" />
+            </a>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="partners" data-screen-label="10C Partners" data-comment-anchor="partners">
+  <div class="container">
+    <div class="partners__head reveal">
+      <span class="eyebrow eyebrow--show">Our partners</span>
+    </div>
+    <div class="partners__grid reveal" style="--d:120">
+      {partners.map((p) => (
+        <a href={p.url} class="partners__item" target="_blank" rel="noopener noreferrer">
+          <img src={p.logo.src} width={p.logo.width} height={p.logo.height} alt={`${p.name} logo`} loading="lazy" />
+        </a>
+      ))}
     </div>
   </div>
 </section>
