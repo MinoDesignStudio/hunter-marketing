@@ -14,9 +14,74 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       <Image src={logoInk} alt="Hunter Marketing Co." width={400} densities={[1, 2]} loading="eager" />
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href={`${base}#services`}>Services</a>
+      <div class="nav-dropdown">
+        <a href={`${base}#services`} class="nav-dropdown__trigger" aria-haspopup="true">Services <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+        <ul class="nav-dropdown__menu">
+          <li><a href={`${base}services/marketing-plan-in-a-day/`}>1:1 Marketing Plan in a Day</a></li>
+          <li><a href={`${base}services/marketing-plan-in-a-day-brand-photos/`}>Marketing Plan in a Day &amp; Brand Photos</a></li>
+          <li><a href={`${base}services/marketing-strategy-implementation-plan/`}>6-12 Month Marketing Strategy &amp; Implementation Plan</a></li>
+          <li><a href={`${base}services/fractional-cmo/`}>Fractional CMO Services</a></li>
+        </ul>
+      </div>
       <a href={`${base}blog/`}>Blog</a>
     </nav>
     <a href="mailto:hello@huntermarketing.co" class="btn btn--primary">Contact us <span class="arrow">→</span></a>
   </div>
 </header>
+
+<style>
+  .nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+  .nav-dropdown__trigger { display: inline-flex; align-items: center; gap: 6px; }
+  .nav-caret { font-size: 10px; line-height: 1; transition: transform 200ms ease; }
+
+  /* Invisible bridge so the pointer can travel from trigger to menu */
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 100%;
+    height: 16px;
+  }
+
+  .nav-dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 16px 0 0;
+    padding: 8px;
+    min-width: 320px;
+    list-style: none;
+    background: #fff;
+    border: 1px solid rgba(34, 28, 52, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(34, 28, 52, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+    z-index: 90;
+  }
+  .nav-dropdown:hover .nav-dropdown__menu,
+  .nav-dropdown:focus-within .nav-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown:hover .nav-caret,
+  .nav-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
+
+  .nav-dropdown__menu li { margin: 0; }
+  .nav-dropdown__menu a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--hmc-ink);
+    white-space: nowrap;
+  }
+  .nav-dropdown__menu a:hover { background: var(--hmc-cream); color: var(--hmc-verdigris); }
+  /* Suppress the global underline-on-hover bar inside the dropdown */
+  .nav-dropdown__menu a:hover::after { display: none; }
+</style>

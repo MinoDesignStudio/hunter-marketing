@@ -266,7 +266,7 @@ section { position: relative; }
   align-items: center;
   gap: 32px;
 }
-.site-header__logo img { height: 72px; width: auto; }
+.site-header__logo img { height: auto; width: auto; max-height: 72px; max-width: 100%; }
 .site-nav {
   display: flex;
   gap: 36px;
@@ -1825,4 +1825,4 @@ section { position: relative; }
   .svc-blob-centre .svc-blob-wrap { max-width: 80%; }
 }
 
-.svc-parallax { background-image: url('../assets/parallax-mpiad.jpg'); }
+.svc-parallax { background-image: url('../assets/fractional-cmo-team-collaboration-brisbane.jpg'); }
