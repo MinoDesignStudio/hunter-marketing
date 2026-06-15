@@ -1,0 +1,292 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/events.css';
+
+import heroImg from '../assets/events-hero-hunter-marketing.jpg';
+import mpiadImg from '../assets/events-marketing-plan-in-a-day.jpg';
+import alignedImg from '../assets/events-aligned-assembly.jpg';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const calendly = 'https://calendly.com/huntermarketingco/free-15-min-marketing-consultation-call';
+const pBody = 'margin:0 0 16px;font-size:16.5px;line-height:1.72;color:var(--ink-600);';
+const detailLine = 'margin:0 0 6px;font-size:16px;color:var(--hmc-ink);';
+---
+<BaseLayout
+  title="Events | Hunter Marketing Co."
+  description="High-impact, in-person events from Hunter Marketing Co. Marketing Plan in a Day + Brand Photos and The Aligned Assembly networking breakfasts in Brisbane. Spots are limited and sell out."
+  path="/events/"
+  ogImage={heroImg.src}
+>
+<!-- SVG blob defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="blob-pronounced" clipPathUnits="objectBoundingBox">
+      <path d="M0.52,-0.02 C0.74,-0.04 0.97,0.08 0.97,0.26 C0.99,0.46 0.78,0.58 0.97,0.76 C0.99,0.96 0.66,1.06 0.42,1.02 C0.20,0.99 -0.02,0.92 -0.04,0.70 C-0.04,0.50 0.07,0.34 0.04,0.18 C0.02,0.00 0.28,0.02 0.52,-0.02 Z" />
+    </clipPath>
+    <clipPath id="blob-soft" clipPathUnits="objectBoundingBox">
+      <path d="M0.50,0.02 C0.72,0.02 0.95,0.10 0.98,0.32 C1.02,0.55 0.97,0.78 0.82,0.92 C0.66,1.05 0.42,1.00 0.23,0.92 C0.04,0.83 0.00,0.60 0.02,0.40 C0.04,0.20 0.18,0.05 0.50,0.02 Z" />
+    </clipPath>
+    <clipPath id="blob-mid" clipPathUnits="objectBoundingBox">
+      <path d="M0.51,0.01 C0.72,0.00 0.93,0.10 0.97,0.30 C1.02,0.51 0.95,0.72 0.84,0.88 C0.72,1.04 0.50,1.00 0.32,0.95 C0.14,0.91 0.02,0.78 0.01,0.58 C-0.01,0.39 0.07,0.21 0.21,0.10 C0.30,0.03 0.39,0.02 0.51,0.01 Z" />
+    </clipPath>
+    <clipPath id="blob-alt" clipPathUnits="objectBoundingBox">
+      <path d="M0.44,-0.04 C0.68,-0.06 0.96,0.06 1.04,0.28 C1.12,0.52 0.94,0.76 0.86,0.94 C0.74,1.14 0.44,1.10 0.22,0.96 C0.02,0.84 -0.06,0.60 -0.02,0.38 C0.04,0.16 0.20,-0.02 0.44,-0.04 Z" />
+    </clipPath>
+    <clipPath id="blob-card-b" clipPathUnits="objectBoundingBox">
+      <path d="M0.06,0.14 C0.10,0.02 0.26,0.00 0.54,0.02 C0.82,0.04 0.96,0.02 0.98,0.14 C1.00,0.28 0.96,0.56 0.97,0.80 C0.98,0.96 0.90,1.04 0.48,1.00 C0.08,0.96 0.00,0.94 0.02,0.76 C0.04,0.52 0.02,0.26 0.06,0.14 Z" />
+    </clipPath>
+    <clipPath id="blob-card-c" clipPathUnits="objectBoundingBox">
+      <path d="M0.02,0.18 C0.00,0.06 0.18,0.00 0.50,0.02 C0.78,0.04 0.96,0.00 1.00,0.12 C1.04,0.26 0.98,0.52 0.98,0.76 C0.98,0.94 0.86,1.02 0.52,1.00 C0.14,0.98 0.04,0.92 0.02,0.74 C0.00,0.56 0.04,0.30 0.02,0.18 Z" />
+    </clipPath>
+    <clipPath id="blob-card" clipPathUnits="objectBoundingBox">
+      <path d="M0.04,0.10 C0.06,0.02 0.20,0.00 0.50,0.01 C0.80,0.02 0.94,0.00 0.98,0.10 C1.02,0.22 1.00,0.50 0.99,0.78 C0.98,0.96 0.92,1.02 0.50,0.99 C0.10,0.97 0.02,0.96 0.01,0.78 C0.00,0.50 0.02,0.18 0.04,0.10 Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<Nav />
+
+<!-- ============ HERO ============ -->
+<section class="events-hero">
+  <div class="container">
+    <div class="reveal" style="--d:0;text-align:center;">
+      <h1 class="events-hero__h1">Events</h1>
+      <h2 class="events-hero__lead">There is a reason people keep coming back to our events.</h2>
+      <p class="events-hero__body">In a business world where trust is harder to build than ever, high quality in-person experiences cut through in a way that no digital touchpoint can. You leave knowing the right kind of people, potential clients, partners and friends in business. That is what our events are designed to do.</p>
+      <a href={calendly} target="_blank" rel="noopener" class="btn btn--primary btn--mustard" style="margin-top:6px;">Join the Waitlist <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="svc-intro">
+  <div class="container-narrow">
+    <div class="reveal" style="--d:0">
+      <h2 class="svc-intro__lead">Whether you want to get your marketing sorted or build meaningful connections, there is an event suited to you.</h2>
+      <p class="svc-intro__body" style="max-width:760px;margin:0 auto;text-align:center;">We have two different types of high impact events that we offer throughout the year.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARKETING PLAN IN A DAY + BRAND PHOTOS ============ -->
+<section class="svc-section svc-section--grey">
+  <div class="container">
+    <div class="svc-split reveal" style="--d:0;align-items:start;">
+      <div class="svc-blob-wrap">
+        <div class="svc-pf-media-wrap">
+          <div class="svc-pf-media" data-blob-target data-blob-variant="card-b">
+            <Image src={mpiadImg} alt="Participants at a Marketing Plan in a Day event" style="object-position:50% 30%;" widths={[600, 1200]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" />
+          </div>
+        </div>
+        <div class="events-details">
+          <p style={detailLine}><strong>Where:</strong> Central Brisbane location</p>
+          <p style={detailLine}><strong>When:</strong> January/February 2027, exact date to be announced soon</p>
+          <p style={detailLine}><strong>Time:</strong> 8am start, approximately 4.00pm finish</p>
+          <p style="margin:0 0 12px;font-size:16px;color:var(--hmc-ink);"><strong>Investment:</strong> $1,297 incl. GST</p>
+          <p style="margin:0;font-size:15px;font-weight:700;color:var(--hmc-ink);">Maximum of 10 spots for a high-touch personalised experience.</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="svc-title">Marketing Plan in a Day + Brand Photos</h2>
+        <p style={pBody}>This is a highly impactful and popular event that we only run once a year. Transform your marketing and get your brand photos taken in just one day, surrounded by like-minded business owners and experts.</p>
+        <p style={pBody}>This is not a passive workshop. You arrive, you do the work, and you leave with a tailored 90-day marketing plan and professional brand photography ready to use across your marketing.</p>
+        <p style="margin:0 0 4px;font-size:16.5px;line-height:1.72;color:var(--ink-600);">For full details on what is included, what gets covered on the day, and how to prepare, visit the Marketing Plan in a Day + Brand Photos service page.</p>
+        <blockquote class="about-quote">
+          <p>We were able to understand the WHY behind marketing ourselves and how it impacts business in a positive way. Kristy was able to frame our sessions in a way that marketing went from being a boring or just an add on to an essential part of our business growth. She gave us great tips and tricks to use and help keep us accountable to the plans we set. The group sessions were invaluable to development and being able to round table discussions with like-minded people meant we could truly make an impact. I would recommend this to anyone looking to growth not only the business but themselves. I have managed to gain 3 new clients just from the work alone and have run a successful education session. Kristy is the best.</p>
+          <footer>Jerry Reading, McConachie Stedman</footer>
+        </blockquote>
+        <blockquote class="about-quote">
+          <p>Attending the Marketing Plan in a Day was a real lightbulb moment for me. It made me realise just how important it is to consistently invest time into my marketing not as a one-off task, but as an ongoing relationship that needs to be nurtured. It's been such a simple but powerful mindset shift, and it's already made a real difference to how I approach my business.</p>
+          <footer>Liz Wilson, Wilson Contracting</footer>
+        </blockquote>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;">
+          <a href={`${base}services/marketing-plan-in-a-day-brand-photos/`} class="btn btn--secondary">View Full Service Details</a>
+          <a href={calendly} target="_blank" rel="noopener" class="btn btn--primary btn--mustard">Join the Waitlist <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ALIGNED ASSEMBLY ============ -->
+<section class="svc-section" style="background:#fff;">
+  <div class="container">
+    <div class="svc-split reveal" style="--d:0;align-items:start;">
+      <div class="svc-blob-wrap">
+        <div class="svc-pf-media-wrap">
+          <div class="svc-pf-media" data-blob-target data-blob-variant="card-b">
+            <Image src={alignedImg} alt="Guests at The Aligned Assembly networking breakfast in Brisbane" style="object-position:50% 18%;" widths={[600, 1200]} sizes="(max-width: 900px) 100vw, 50vw" loading="lazy" />
+          </div>
+        </div>
+        <div class="events-details">
+          <p style={detailLine}><strong>Where:</strong> PawPaw Cafe, East Brisbane</p>
+          <p style={detailLine}><strong>When:</strong> September 2026, exact date to be announced soon</p>
+          <p style={detailLine}><strong>Time:</strong> Morning breakfast event, full details provided upon booking</p>
+          <p style="margin:0 0 12px;font-size:16px;color:var(--hmc-ink);"><strong>Investment:</strong> Early bird pricing from $87 per person</p>
+          <p style="margin:0;font-size:15px;font-weight:700;color:var(--hmc-ink);">Maximum 30 spots available for an intimate, high-touch experience.</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="svc-title">The Aligned Assembly</h2>
+        <p style={pBody}>The Aligned Assembly is an elevated business breakfast networking event for forward-thinking leaders and innovative service providers who value purposeful connection over surface-level networking. This event brings together people who are genuinely invested in each other's growth, creating a space where meaningful professional relationships form naturally and business conversations carry real weight.</p>
+        <p style="margin:0 0 4px;font-size:16.5px;line-height:1.72;color:var(--ink-600);">Each event centres on a curated marketing, branding or visibility theme and facilitated discussion, with introductions that are thoughtful and deliberate. The format is intimate by design. The conversations go deep by default. Every single event has sold out.</p>
+        <blockquote class="about-quote">
+          <p>I've been to three Aligned Assembly events so far and have loved each one! The types of people that come along are truly the best - the people that you can easily make a meaningful connection with and people that uplift you in life and business. Kristy and Rebecca do such a wonderful job of curating the event, it feels easy and fun the moment you walk through the door, and I always leave feeling energised, enlightened and on top of my game!</p>
+          <footer>Yiota Athousis, Ola Digital</footer>
+        </blockquote>
+        <blockquote class="about-quote">
+          <p>I really enjoy coming along to the Aligned Assembly events. It's a very easy space to relax, get to know other business owners and explore questions posed by other founders. I will always be there if my calendar allows.</p>
+          <footer>Kathryn Steinhardt, SteinArt</footer>
+        </blockquote>
+        <blockquote class="about-quote">
+          <p>An awesome morning, loved the open and thought-provoking conversation, and the opportunity to meet some really wonderful, passionate business people.</p>
+          <footer>Phil Winning, Winning Media</footer>
+        </blockquote>
+        <div style="margin-top:28px;">
+          <a href={calendly} target="_blank" rel="noopener" class="btn btn--primary btn--mustard">Join the Waitlist <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY IN-PERSON STILL WINS ============ -->
+<section class="svc-section svc-section--grey">
+  <div class="container-narrow">
+    <div class="reveal" style="--d:0;text-align:center;">
+      <h2 class="svc-title" style="margin-bottom:24px;">Why in-person still wins</h2>
+      <p class="svc-intro__body" style="max-width:820px;margin:0 auto 18px;text-align:center;">Digital connection has its place. But there is something that happens when people are in the same room, working through the same challenges, that no online interaction can replicate. Trust builds faster. Conversations go deeper. Relationships carry well beyond the day itself.</p>
+      <p class="svc-intro__body" style="max-width:820px;margin:0 auto;text-align:center;">Both events are designed with that in mind. You will not leave wondering if it was worth your time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta" id="book" data-screen-label="12 Final CTA" data-comment-anchor="finalcta">
+  <div class="container">
+    <div class="finalcta__inner">
+      <div class="reveal">
+        <span class="eyebrow">Spots are limited</span>
+        <h2>Both events sell out. <span class="hl">Get your name on the list.</span></h2>
+      </div>
+      <div class="reveal" style="--d:120;display:flex;flex-direction:column;gap:14px;align-items:flex-end;">
+        <a href={calendly} target="_blank" rel="noopener" class="btn btn--primary">Waitlist: MPIAD &amp; Brand Photos <span class="arrow">&rarr;</span></a>
+        <a href={calendly} target="_blank" rel="noopener" class="btn btn--secondary" style="background:#fff;color:var(--hmc-ink);border-color:#fff;">Waitlist: The Aligned Assembly <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<Footer />
+
+<style>
+  /* ===== Hero (centered) ===== */
+  .events-hero {
+    background: #f0eeeb;
+    padding: 80px 0 72px;
+    text-align: center;
+  }
+  .events-hero__h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--hmc-ink);
+    font-size: clamp(40px, 5vw, 64px);
+    margin: 0 0 18px;
+  }
+  .events-hero__lead {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--hmc-ink);
+    font-size: clamp(24px, 2.8vw, 34px);
+    max-width: 760px;
+    margin: 0 auto 22px;
+    text-wrap: balance;
+  }
+  .events-hero__body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-600);
+    max-width: 720px;
+    margin: 0 auto 28px;
+  }
+
+  /* ===== Event detail box (under image) ===== */
+  .events-details {
+    margin-top: 24px;
+    background: #fff;
+    border: 1px solid rgba(34, 28, 52, 0.10);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  /* ===== Inline testimonial quotes ===== */
+  .about-quote {
+    margin: 22px 0 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--hmc-mustard);
+    background: rgba(34, 28, 52, 0.02);
+    border-radius: 0 8px 8px 0;
+  }
+  .about-quote p {
+    margin: 0 0 8px;
+    font-style: italic;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--hmc-ink);
+  }
+  .about-quote p::before { content: '\201C'; }
+  .about-quote p::after { content: '\201D'; }
+  .about-quote footer {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-500);
+  }
+</style>
+
+<script is:inline>
+// ===== Scroll header state =====
+const hdr = document.getElementById('siteHeader');
+const onScroll = () => hdr.classList.toggle('is-scrolled', window.scrollY > 4);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ===== Reveal-on-scroll =====
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const d = parseFloat(e.target.style.getPropertyValue('--d') || '0');
+      setTimeout(() => e.target.classList.add('is-in'), d);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ===== Blob clip application =====
+const BLOB_VARIANTS = {
+  pronounced: { default: 'blob-pronounced', alt: 'blob-alt', tert: 'blob-tert', card: 'blob-card', 'card-b': 'blob-card-b', 'card-c': 'blob-card-c', wave: 'blob-wave' },
+};
+function applyBlobs(intensity) {
+  const map = BLOB_VARIANTS[intensity] || BLOB_VARIANTS.pronounced;
+  document.querySelectorAll('[data-blob-target]').forEach(el => {
+    const variant = el.dataset.blobVariant || 'default';
+    const id = map[variant] || map.default;
+    el.style.clipPath = `url(#${id})`;
+    el.style.webkitClipPath = `url(#${id})`;
+  });
+}
+applyBlobs('pronounced');
+</script>
+</BaseLayout>
