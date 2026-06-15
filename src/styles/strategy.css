@@ -1488,7 +1488,7 @@ section { position: relative; }
   font-size: 17px;
   line-height: 1.75;
   color: var(--ink-600);
-  max-width: 680px;
+  max-width: 840px;
   margin: 0 auto 18px;
 }
 .svc-intro__body:last-child {
